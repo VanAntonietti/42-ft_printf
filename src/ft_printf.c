@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:01:22 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 17:27:35 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:05:07 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ static void	ft_printf_sort(const char *format, va_list ap, t_len *len)
 	else if (*format == 'X')
 		ft_printf_xu(va_arg(ap, unsigned int), len);
 	else if (*format == '%')
-		{
-			write (1, format, 1);
-			len->len += 1;
-		}
-		// ft_printf_percentage(len);
+		ft_printf_percentage(len);
 }
 
 static int	ft_vfprintf(const char *format, va_list ap, t_len *len)

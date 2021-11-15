@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:39:56 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 12:56:14 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:05:36 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_printf_p(void *hex, t_len *len)
 	if (!hex && !IS_MACOS)
 	{
 		ft_putstr_fd("(nil)", 1);
-		len->len += 3;
+		len->len += 5;
 	}
 	else if (!hex)
 	{
