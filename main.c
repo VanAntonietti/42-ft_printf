@@ -8,122 +8,65 @@ int main(void)
 	char	*str;
 	char	*chr;
 	char	*sri;
-	char	*s;
-	int 	i;
-	size_t count[2];
 
-	i = 0;
-	s = 0;
 	str = "";
 	ptr = "Ahhhhhhhhhhhhh";
 	chr = "Piru";
 	sri = "UltimateTeste";
-	printf ("\n== printf original\n>> sua ft_print\n\n");
-
-	// printf("%d\n", printf("teste%c,%c,%c\n", 'p', 'a', 'u'));
-	// printf("%d\n", ft_printf("teste%c,%c,%c\n", 'p', 'a', 'u'));
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf("teste%d,%d,%d\n", 1212351234, 1234, 5678));
-	// printf("%d\n", ft_printf("teste%d,%d,%d\n", 1212351234, 1234, 5678));
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf(" %d %d %ld %ld %lu %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-	// printf("%d\n", ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 	
-	// ft_putchar_fd('\n', 1);
 
-	// printf("%d\n", printf(" %d %d %ld %ld %lu %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-	// printf("%d\n", ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+	printf("%d\n", printf("teste%c,%c,%c\n", 'p', 'a', 'u'));
+	printf("%d\n", ft_printf("teste%c,%c,%c\n", 'p', 'a', 'u'));
+	
+	ft_putchar_fd('\n', 1);
+	
+	printf("%d\n", printf("teste%d,%d,%d\n", 1212351234, -1234, -5678));
+	printf("%d\n", ft_printf("teste%d,%d,%d\n", 1212351234, -1234, -5678));
+	
+	ft_putchar_fd('\n', 1);
+	
+	printf("%d\n", printf("teste%i,%i,%i\n", 1212351234, -1234, -5678));
+	printf("%d\n", ft_printf("teste%i,%i,%i\n", 1212351234, -1234, -5678));
 
-	// ft_putchar_fd('\n', 1);
+	ft_putchar_fd('\n', 1);
 
-	// printf("%d\n", printf("teste%i,%i,%i\n", 1212351234, 1234, 5678));
-	// printf("%d\n", ft_printf("teste%i,%i,%i\n", 1212351234, 1234, 5678));
+	printf("%d\n", printf("teste%%,%c,%d,%s\n", 'p', 1234, sri));
+	printf("%d\n", ft_printf("teste%%,%c,%d,%s\n", 'p', 1234, sri));
 
 	ft_putchar_fd('\n', 1);
 
 	printf("%d\n", printf("teste%p,%p,%p,%p\n", str, ptr, chr, sri));
 	printf("%d\n", ft_printf("teste%p,%p,%p,%p\n", str, ptr, chr, sri));
 
-// 	/******************************************************************************/
-// /***************************       PTR       **********************************/
-// /******************************************************************************/
+	ft_putchar_fd('\n', 1);
+	
+	printf("%d\n", printf("teste%s,%s,%s\n", str, ptr, chr));
+	printf("%d\n", ft_printf("teste%s,%s,%s\n", str, ptr, chr));
+	
+	ft_putchar_fd('\n', 1);
+	
+	printf("%d\n", printf("teste%u,%u,%u\n", 1212351234, -1234, -5678));
+	printf("%d\n", ft_printf("teste%u,%u,%u\n", 1212351234, -1234, -5678));
+	
+	ft_putchar_fd('\n', 1);
+	
+	printf("%d\n", printf("teste%x,%x,%x,%x\n", 1, 6, 12, 15));
+	printf("%d\n", ft_printf("teste%x,%x,%x,%x\n", 1, 6, 12, 15));
+	
+	ft_putchar_fd('\n', 1);
 
-// // TEST ITERATIVE PTR
-// 	s = 0;
-// 	while (i<=10)
-// 	{
-// 	printf ("\n44*** ITERATIVE PTR ***\n");
-// 	count[0] = printf ("==|%p|\n", s);
-// 	count[1] = ft_printf (">>|%p|\n", s);
-// 	printf( "Or:Ft [%zu:%zu] \n", count[0], count[1]);
-// 	s++;
-// 	i++;
-// 	}
-// 	s = 0;
+	printf("%d\n", printf("teste%X,%X,%X,%X\n", 1212351234, 1234, 5678, 12345));
+	printf("%d\n", ft_printf("teste%X,%X,%X,%X\n", 1212351234, 1234, 5678, 12345));
 
-// // TEST simple ptr
-// 	s = ft_strdup("__teste1230__");
-// 	printf ("\n45*** simple ptr ***\n");
-// 	count[0] = printf ("==|%p|\n", s);
-// 	count[1] = ft_printf (">>|%p|\n", s);
-// 	printf( "Or:Ft [%zu:%zu] \n", count[0], count[1]);
-// 	free(s);
-// 	s = 0;
+	ft_putchar_fd('\n', 1);
 
-// // TEST ptr = 1152921504606846975UL
-// 	s = (char *) 1152921504606846975UL;
-// 	printf ("\n46*** ptr = fffffffffffffff ***\n");
-// 	count[0] = printf ("==|%p|\n", s);
-// 	count[1] = ft_printf (">>|%p|\n", s);
-// 	printf( "Or:Ft [%zu:%zu] \n", count[0], count[1]);
-// 	s = 0;
-
-// // TEST ptr = 18446744073709551614UL == FFFFFFFFFFFFFFFE
-// 	s = (char *) 18446744073709551614UL;
-// 	printf ("\n47*** ptr = ULONG_MAX -1 ***\n");
-// 	count[0] = printf ("==|%p|\n", s);
-// 	count[1] = ft_printf (">>|%p|\n", s);
-// 	printf( "Or:Ft [%zu:%zu] \n", count[0], count[1]);
-// 	s = 0;
-
-// // TEST ptr = ULONG_MAX
-// 	s = (char *) ULONG_MAX;
-// 	printf ("\n48*** ptr = ULONG_MAX ***\n");
-// 	count[0] = printf ("==|%p|\n", s);
-// 	count[1] = ft_printf (">>|%p|\n", s);
-// 	printf( "Or:Ft [%zu:%zu] \n", count[0], count[1]);
-// 	s = 0;
-
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf("teste%s,%s,%s\n", str, ptr, chr));
-	// printf("%d\n", ft_printf("teste%s,%s,%s\n", str, ptr, chr));
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf("teste%u,%u,%u\n", 1212351234, 1234, 5678));
-	// printf("%d\n", ft_printf("teste%u,%u,%u\n", 1212351234, 1234, 5678));
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf("teste%x,%x,%x,%x\n", 1, 6, 12, 15));
-	// printf("%d\n", ft_printf("teste%x,%x,%x,%x\n", 1, 6, 12, 15));
-
-	// ft_putchar_fd('\n', 1);
-
-	// printf("%d\n", printf("teste%X,%X,%X,%X\n", 1212351234, 1234, 5678, 12345));
-	// printf("%d\n", ft_printf("teste%X,%X,%X,%X\n", 1212351234, 1234, 5678, 12345));
-
+	printf("%d\n", printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+	printf("%d\n", ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
 }	
 	
 // 	char teste[] = "teste";
 // 	char teste2[] = "luiz";
-// 	char teste3[] = "sabao";
+// 	char teste3[] = "sabao";cd 
 // 	int number = 30;
 // 	printf("%.90f\n",10.92);
 // 	printf("%c\n", 't');

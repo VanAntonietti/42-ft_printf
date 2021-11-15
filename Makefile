@@ -9,6 +9,7 @@ SRCS	=		ft_printf.c \
 				ft_printf_d.c \
 				ft_printf_i.c \
 				ft_printf_p.c \
+				ft_printf_percentage.c \
 				ft_printf_s.c \
 				ft_printf_u.c \
 				ft_printf_x.c \
@@ -52,7 +53,10 @@ teste: update
 	cd teste2 && sh test
 
 test: re
-	gcc -g3 -I ./src main.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft 
+	gcc -g3 -I ./src main.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft
+
+test1: re
+	gcc -g3 -I ./src testao.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft 
 
 git: 
 	git add .

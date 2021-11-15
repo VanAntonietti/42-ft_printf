@@ -6,13 +6,13 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:51:44 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/14 18:54:02 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:56:19 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_d(int dec, t_len *len)
+void	ft_printf_d(unsigned int dec, t_len *len)
 {
     char   *str;
 

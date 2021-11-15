@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_c.c                                      :+:      :+:    :+:   */
+/*   ft_printf_percentage.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 22:16:39 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 12:57:29 by vantonie         ###   ########.fr       */
+/*   Created: 2021/11/15 13:14:24 by vantonie          #+#    #+#             */
+/*   Updated: 2021/11/15 13:17:57 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_printf_c (const int i, t_len *len)
+void	ft_printf_percentage (t_len *len)
 {
-	char c;
-	c = i;
-	ft_putchar_fd(c, 1);
+	ft_putchar_fd('%', 1);
 	len->len += 1;
 }

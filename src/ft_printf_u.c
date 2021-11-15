@@ -6,18 +6,27 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:54:35 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/14 16:55:34 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:21:57 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_printf_u(unsigned int dec, t_len *len)
+static void ft_putnbr_base(unsigned long long n, char *base, int *i_len)
 {
-    char	*str;
-    
-    str = ft_itoa(dec);
-    ft_putstr_fd(str, 1);
-    len->len += ft_strlen(str);
-    free(str);
+	if (n >= ft_strlen(base))
+	{
+		*i_len = *i_len + 1;
+		ft_putnbr_base(n / ft_strlen(base), base, i_len);
+	}
+	ft_putchar_fd(base[n % ft_strlen(base)], 1);
+}
+
+void	ft_printf_u(unsigned int dec, t_len *len)
+{
+	int				i_len;
+
+	i_len = 0;
+    ft_putnbr_base(dec, DEC, &i_len);
+	len->len += i_len + 1;
 }
