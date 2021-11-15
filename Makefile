@@ -4,7 +4,15 @@ CC_FLAGS	=	-Wall -Wextra -Werror
 
 LIBFT	=		./libft/libft.a
 
-SRCS	=		ft_printf.c
+SRCS	=		ft_printf.c \
+				ft_printf_c.c \
+				ft_printf_d.c \
+				ft_printf_i.c \
+				ft_printf_p.c \
+				ft_printf_s.c \
+				ft_printf_u.c \
+				ft_printf_x.c \
+				ft_printf_xu.c \
 
 OBJS = $(SRCS:.c=.o)
 	
@@ -21,7 +29,7 @@ $(LIBFT):
 
 
 $(OBJS):
-	gcc $(CC_FLAGS) -I./header -c $(addprefix ./src/,$(SRCS))
+	gcc $(CC_FLAGS) -I./src -c $(addprefix ./src/,$(SRCS))
 
 
 clean: 
@@ -37,14 +45,14 @@ re: fclean all
 bonus: all
 
 gdb:
-	gcc -g3 -I ./header main.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft 
+	gcc -g3 -I ./src main.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft -ggdb
 
 teste: update
 	make re
 	cd teste2 && sh test
 
-teste1: re
-	gcc -I ./header main.c -L . -lftprintf && ./a.out -g3
+test: re
+	gcc -g3 -I ./src main.c $(addprefix ./src/,$(SRCS)) -L ./libft -lft 
 
 git: 
 	git add .

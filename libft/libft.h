@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:54:35 by vantonie          #+#    #+#             */
-/*   Updated: 2021/09/28 00:07:36 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:49:41 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,7 +271,7 @@ char	**ft_split(char const *s, char c);
  * @param n transform the int in a string the represents the int.
  * @return the string that's is equal to the int.
  */
-char	*ft_itoa(int n);
+char	*ft_itoa(long int n);
 
 /**
  * @brief Applies the function F to each character of the string S to create

@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:39:55 by vantonie          #+#    #+#             */
-/*   Updated: 2021/09/17 01:32:06 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:39:27 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	*ft_calloc(size_t n, size_t m)
 {
 	void	*p;
+	void	*d;
 
 	p = malloc(n * m);
 	if (p == 0)
@@ -22,5 +23,7 @@ void	*ft_calloc(size_t n, size_t m)
 		return (p);
 	}
 	ft_bzero(p, n * m);
-	return (p);
+	d = p;
+	free(p);
+	return (d);
 }

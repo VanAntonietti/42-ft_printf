@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 22:16:39 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/10 00:12:47 by an7onie77i       ###   ########.fr       */
+/*   Updated: 2021/11/13 16:17:27 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_printf_c (const int c)
+void	ft_printf_c (const int i, t_len *len)
 {
-	ft_putchar_fd (c, 1);
+	char c;
+	c = i;
+	ft_putchar_fd(c, 1);
+	len->len += 1;
 }

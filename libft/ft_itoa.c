@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:28:46 by vantonie          #+#    #+#             */
-/*   Updated: 2021/09/17 01:32:06 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:53:40 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_fill(char *str, int n, int size)
 	str[size] = (n % 10) + 48;
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	int		size;
 	char	*str;
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 		i = 1;
 	}
 	size = ft_len(n);
-	str = ft_calloc(size + 1, sizeof(char));
+	str = malloc(size + 1 * sizeof(char));
 	if (str == 0)
 	{
 		return (NULL);

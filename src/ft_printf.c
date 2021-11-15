@@ -5,47 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 21:53:24 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/10 00:13:39 by an7onie77i       ###   ########.fr       */
+/*   Created: 2021/11/11 12:01:22 by vantonie          #+#    #+#             */
+/*   Updated: 2021/11/14 21:36:57 by an7onie77i       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-#include "../header/ft_printf.h"
-
-static int	ft_printf_sort(const char *format, int i, va_list ap)
+static void	ft_printf_sort(const char *format, va_list ap, t_len *len)
 {
-	
-	if (format[i] == 'c')
-		return(ft_printf_c(va_arg(ap, int)));
-		
-	return(0);
+	if (*format == 'c')
+		ft_printf_c(va_arg(ap, int), len);
+	else if (*format == 'd')
+		ft_printf_d(va_arg(ap, int), len);
+	else if (*format == 'i')
+		ft_printf_i(va_arg(ap, int), len);
+	else if (*format == 'p')
+		ft_printf_p(va_arg(ap, void *), len);
+	else if (*format == 's')
+		ft_printf_s(va_arg(ap, char *), len);
+	else if (*format == 'u')
+		ft_printf_u(va_arg(ap, unsigned int), len);
+	else if (*format == 'x')
+		ft_printf_x(va_arg(ap, unsigned int), len);
+	else if (*format == 'X')
+		ft_printf_xu(va_arg(ap, unsigned int), len);
 }
 
-static char	*ft_vfprintf(const char *format, va_list ap)
+static int	ft_vfprintf(const char *format, va_list ap, t_len *len)
 {
-	int			i;
-
-	i = 0;
-	while (format[i] != '\0')
+	len->i = 0;
+	while (format[len->i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[len->i] == '%')
 		{
-			i++;
-			ft_printf_sort(&format[i], i, ap);
+			len->i++;
+			ft_printf_sort(&format[len->i], ap, len);
+			len->i++;
 		}
-		ft_putchar_fd(format[i], 1);
-		i++;
+		else
+		{
+		ft_putchar_fd(format[len->i], 1);
+		len->i++;
+		len->len++;
+		}
 	}
 	return(0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list		ap;
+	va_list	ap;
+	t_len	*len;
+	int		print_len;
 
+	len = (void *) malloc(1 * sizeof(t_len));
 	va_start(ap, format);
-	ft_vfprintf(format, ap);
+	ft_vfprintf(format, ap, len);
 	va_end(ap);
-	return(0);
+	print_len = len->len;
+	free(len);
+	return(print_len);
 }
