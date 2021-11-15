@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:01:22 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 15:41:25 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:27:35 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	ft_printf_sort(const char *format, va_list ap, t_len *len)
 static int	ft_vfprintf(const char *format, va_list ap, t_len *len)
 {
 	len->i = 0;
+	len->len = 0;
 	while (format[len->i] != '\0')
 	{
 		if (format[len->i] == '%')
@@ -65,7 +66,9 @@ int	ft_printf(const char *format, ...)
 	t_len	*len;
 	int		print_len;
 
-	len = (void *) malloc(1 * sizeof(t_len));
+	len = malloc(1 * sizeof(t_len));
+	if(!len)
+		len = NULL;
 	va_start(ap, format);
 	ft_vfprintf(format, ap, len);
 	va_end(ap);

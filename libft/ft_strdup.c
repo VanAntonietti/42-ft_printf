@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:52:35 by vantonie          #+#    #+#             */
-/*   Updated: 2021/09/28 00:01:31 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:45:56 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strdup(const char *str)
 {
+	size_t	i;
 	size_t	len;
-	char	*cpy;
+	char	*s;
 
 	len = ft_strlen(str) + 1;
-	cpy = ft_calloc(len, sizeof(char));
-	if (cpy == NULL)
-	{
+	s = (char *)malloc(sizeof(char) * len);
+	if (s == NULL)
 		return (NULL);
-	}
-	ft_strlcpy(cpy, str, len);
-	return (cpy);
+	i = -1;
+	while (++i < len)
+		s[i] = str[i];
+	return (s);
 }
