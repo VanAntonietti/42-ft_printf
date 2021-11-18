@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 21:54:10 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 13:15:26 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/18 09:25:21 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 # endif
 
 typedef struct s_len{
-	int len;
-    int i;
+	int	len;
+	int	i;
 }			t_len;
 
 typedef enum e_bool {TRUE = 1, FALSE = 0}	t_bool;
@@ -44,7 +44,7 @@ void	ft_printf_c(int i, t_len *len);
 void	ft_printf_d(unsigned int dec, t_len *len);
 void	ft_printf_i(unsigned int dec, t_len *len);
 void	ft_printf_p(void *hex, t_len *len);
-void	ft_printf_percentage (t_len *len);
+void	ft_printf_percentage(t_len *len);
 void	ft_printf_s(char *str, t_len *len);
 void	ft_printf_u(unsigned int dec, t_len *len);
 void	ft_printf_x(unsigned int hex, t_len *len);

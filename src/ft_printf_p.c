@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:39:56 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 18:05:36 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/18 09:24:28 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_printf_p(void *hex, t_len *len)
 {
 	int				i_len;
 
-	
 	i_len = 0;
 	if (!hex && !IS_MACOS)
 	{
@@ -40,8 +39,8 @@ void	ft_printf_p(void *hex, t_len *len)
 	}
 	else
 	{
-	ft_putstr_fd("0x", 1);
-	ft_putnbr_base((unsigned long)hex, HEX_L, &i_len);
+		ft_putstr_fd("0x", 1);
+		ft_putnbr_base((unsigned long)hex, HEX_L, &i_len);
 	len->len += i_len + 3;
 	}
 }

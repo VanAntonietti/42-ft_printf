@@ -40,6 +40,8 @@ clean:
 fclean: clean 
 	make fclean -C ./libft
 	rm -f $(NAME)
+	rm -f a.out
+	rm -rf a.out.dSYM
 
 re: fclean all
 

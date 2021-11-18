@@ -6,13 +6,13 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:54:40 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/14 20:27:56 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/18 09:28:28 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void ft_putnbr_base(unsigned long long n, char *base, int *i_len)
+static void	ft_putnbr_base(unsigned long long n, char *base, int *i_len)
 {
 	if (n >= ft_strlen(base))
 	{
@@ -24,9 +24,9 @@ static void ft_putnbr_base(unsigned long long n, char *base, int *i_len)
 
 void	ft_printf_x(unsigned int hex, t_len *len)
 {
-	int				i_len;
-    
+	int	i_len;
+
 	i_len = 0;
-    ft_putnbr_base(hex, HEX_L, &i_len);
+	ft_putnbr_base(hex, HEX_L, &i_len);
 	len->len += i_len + 1;
 }

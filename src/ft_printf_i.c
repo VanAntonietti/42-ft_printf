@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:51:55 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 17:45:54 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/18 09:37:04 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_printf_i(unsigned int dec, t_len *len)
 {
-    char	*str;
+	char	*str;
 
-    str = ft_itoa(dec);
-    ft_putstr_fd(str, 1);
-    len->len += ft_strlen(str);
-    free(str);
+	str = ft_itoa(dec);
+	ft_putstr_fd(str, 1);
+	len->len += ft_strlen(str);
+	free(str);
 }

@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:01:22 by vantonie          #+#    #+#             */
-/*   Updated: 2021/11/15 18:05:07 by vantonie         ###   ########.fr       */
+/*   Updated: 2021/11/18 09:32:32 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_printf_sort(const char *format, va_list ap, t_len *len)
 		ft_printf_percentage(len);
 }
 
-static int	ft_vfprintf(const char *format, va_list ap, t_len *len)
+static void	ft_vfprintf(const char *format, va_list ap, t_len *len)
 {
 	len->i = 0;
 	len->len = 0;
@@ -48,12 +48,11 @@ static int	ft_vfprintf(const char *format, va_list ap, t_len *len)
 		}
 		else
 		{
-		ft_putchar_fd(format[len->i], 1);
-		len->i++;
-		len->len++;
+			ft_putchar_fd(format[len->i], 1);
+			len->i++;
+			len->len++;
 		}
 	}
-	return(0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -63,12 +62,12 @@ int	ft_printf(const char *format, ...)
 	int		print_len;
 
 	len = malloc(1 * sizeof(t_len));
-	if(!len)
+	if (!len)
 		len = NULL;
 	va_start(ap, format);
 	ft_vfprintf(format, ap, len);
 	va_end(ap);
 	print_len = len->len;
 	free(len);
-	return(print_len);
+	return (print_len);
 }
