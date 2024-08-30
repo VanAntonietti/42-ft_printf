@@ -16,8 +16,8 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/VanAntonietti/42-get_next_line">
-    <img src="https://github.com/VanAntonietti/VanAntonietti/raw/main/img/ft_printf.png" alt="PRINTF 125/100">
+  <a href="https://github.com/VanAntonietti/42-ft_printf">
+    <img src="https://github.com/VanAntonietti/VanAntonietti/raw/main/img/ft_printf.png" alt="PRINTF 100/125">
   </a>
   <br>
   100/125
