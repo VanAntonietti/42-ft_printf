@@ -20,7 +20,7 @@
     <img src="https://github.com/VanAntonietti/VanAntonietti/raw/main/img/ft_printf.png" alt="PRINTF 125/100">
   </a>
   <br>
-  125/100
+  100/125
 </p>
 
 ---
